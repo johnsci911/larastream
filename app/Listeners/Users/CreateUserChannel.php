@@ -2,8 +2,6 @@
 
 namespace App\Listeners\Users;
 
-use App\Models\Channel;
-
 class CreateUserChannel
 {
     /**
@@ -14,9 +12,8 @@ class CreateUserChannel
      */
     public function handle($event)
     {
-        dd($event->user);
-        Channel::create([
-            'user_id' => $event->user->id,
+        dd($event->user->id);
+        $event->user->channel()->create([
             'name' => $event->user->name,
         ]);
     }
