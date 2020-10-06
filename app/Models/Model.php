@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model as BaseModel;
 class Model extends BaseModel
 {
     use HasFactory;
-
+ 
     public $incrementing = false;
 
     protected static function boot()
@@ -17,9 +17,7 @@ class Model extends BaseModel
         parent::boot();
 
         static::creating(function ($model) {
-            $model->{
-                $model->getKeyName()
-            } = (string) Str::uuid();
+            $model->{$model->getKeyName()} = (string) Str::uuid();
         });
     }
 }
