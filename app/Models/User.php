@@ -3,15 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-
-    protected $keyType = 'string';     
-    
+    use Notifiable, HasFactory;
+ 
     public $incremeneting = false;
 
     protected static function boot()
@@ -50,6 +49,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'id' => 'string',
         'email_verified_at' => 'datetime',
     ];
 

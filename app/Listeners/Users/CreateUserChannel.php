@@ -12,9 +12,8 @@ class CreateUserChannel
      */
     public function handle($event)
     {
-        dd($event->user->id);
-        $event->user->channel()->create([
-            'name' => $event->user->name,
+        $event->user->latest()->first()->channel()->create([
+            'name' => $event->user->latest()->first()->name,
         ]);
     }
 }

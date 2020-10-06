@@ -11,8 +11,7 @@ class Model extends BaseModel
     use HasFactory;
 
     protected $guarded = [];
-    protected $keyType = 'string';
-
+    
     public $incrementing = false;
 
     protected static function boot()
