@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'VStream'),
 
     /*
     |--------------------------------------------------------------------------
@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        VStream\Providers\AppServiceProvider::class,
+        VStream\Providers\AuthServiceProvider::class,
+        // VStream\Providers\BroadcastServiceProvider::class,
+        VStream\Providers\EventServiceProvider::class,
+        VStream\Providers\RouteServiceProvider::class,
 
     ],
 
